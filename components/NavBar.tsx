@@ -1,5 +1,5 @@
 "use client"
-import { Laptop, LogOut, Moon, MoonIcon, Settings, Sun, SunIcon, User } from 'lucide-react'
+import { DollarSign, Laptop, LogOut, Moon, MoonIcon, Settings, Sun, SunIcon, User } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
@@ -21,7 +21,7 @@ const NavBar = () => {
     return (
         <div className='flex justify-between p-4'>
             {/* //left */}
-            <SidebarTrigger  className='cursor-pointer'/>
+            <SidebarTrigger className='cursor-pointer' />
             {/* //right */}
             <div className='flex items-center gap-4'>
 
@@ -59,16 +59,26 @@ const NavBar = () => {
                         <DropdownMenuLabel>My Account</DropdownMenuLabel>
                         <DropdownMenuSeparator />
                         <DropdownMenuItem>
-                            <div className='flex items-center gap-2'>
-                                <User className="h-[1.2rem] w-[1.2rem] mr-2" />
-                                Profile
-                            </div>
+                            <Link href="/users/profile">
+                                <div className='flex items-center gap-2'>
+                                    <User className="h-[1.2rem] w-[1.2rem] mr-2" />
+                                    Profile
+                                </div>
+                            </Link>
                         </DropdownMenuItem>
                         <DropdownMenuItem>
                             <div className='flex items-center gap-2'>
                                 <Settings className="h-[1.2rem] w-[1.2rem] mr-2" />
                                 Settings
                             </div>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                            <Link href="/payments">
+                                <div className='flex items-center gap-2'>
+                                    <DollarSign className="h-[1.2rem] w-[1.2rem] mr-2" />
+                                    Payments
+                                </div>
+                            </Link>
                         </DropdownMenuItem>
                         <DropdownMenuItem>
                             <div className='flex items-center gap-2'>
